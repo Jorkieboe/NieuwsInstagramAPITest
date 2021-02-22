@@ -8,17 +8,25 @@
 </head>
 
 <body>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
-    <h1>hallo</h1>
-    <div id="instafeed"></div>
-
+    <h1><a
+            href="https://api.instagram.com/oauth/authorize?client_id=436614004251305&redirect_uri=https://distracted-dijkstra-43434d.netlify.app/&scope=user_profile,user_media&response_type=code">hallo</a>
+    </h1>
+    <div id=" instafeed"></div>
+    <!-- <script src="scripts/instafeed.js"></script>
     <script type="text/javascript">
         var feed = new Instafeed({
-            accessToken: "IGQVJYVWRQekpqajZAlNmlUWV9fQ1Ewbk4wUXBqNTl3Wk5CYkFIX2NFWDRINkQtM1F3eXJHVGpRQ2RLcTAxblhISndpbzlnNlU2MW9tZAUU5eVMtQjdCTGhsdEEyNHc3eGFMTUNwRXBSLWNCbzRwekpDTwZDZD"
+            // get: 'user',
+            // userId: '208372039',
+            clientId: '436614004251305',
+            accessToken: "IGQVJYVWRQekpqajZAlNmlUWV9fQ1Ewbk4wUXBqNTl3Wk5CYkFIX2NFWDRINkQtM1F3eXJHVGpRQ2RLcTAxblhISndpbzlnNlU2MW9tZAUU5eVMtQjdCTGhsdEEyNHc3eGFMTUNwRXBSLWNCbzRwekpDTwZDZD",
+            limit: 1,
+            debug: true,
+            target: document.getElementById("instafeed"),
+            succes: () => { console.log('after') }
         });
+        console.log(feed.run())
         feed.run();
-    </script>
+    </script> -->
 </body>
 
 </html>
