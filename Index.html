@@ -8,31 +8,18 @@
 </head>
 
 <body>
-    <script>
-        window.fbAsyncInit = function () {
-            FB.init({
-                appId: '878360802958305',
-                xfbml: true,
-                version: 'v9.0'
-            });
-            FB.AppEvents.logPageView();
-        };
-
-        (function (d, s, id) {
-            console.log('test')
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
+    <script type="text/javascript" src="scripts/instafeed.min.js"></script>
     <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
     </div>
     <h1>hallo</h1>
-    <p> <a
-            href="https://api.instagram.com/oauth/authorize?client_id=436614004251305&redirect_uri=https://distracted-dijkstra-43434d.netlify.app&scope=user_profile,user_media&response_type=code">klik
-            hier</a> om met instagram te verbinden</p>
+    <div id="instafeed"></div>
+
+    <script type="text/javascript">
+        var feed = new Instafeed({
+            accessToken: 'IGQVJYVWRQekpqajZAlNmlUWV9fQ1Ewbk4wUXBqNTl3Wk5CYkFIX2NFWDRINkQtM1F3eXJHVGpRQ2RLcTAxblhISndpbzlnNlU2MW9tZAUU5eVMtQjdCTGhsdEEyNHc3eGFMTUNwRXBSLWNCbzRwekpDTwZDZD'
+        });
+        feed.run();
+    </script>
 </body>
 
 </html>
