@@ -52,7 +52,7 @@
                     var value = responseData.someKey;
                 },
                 error: function (responseData, textStatus, errorThrown) {
-                    console.log('POST failed.');
+                    console.log(errorThrown);
                 }
             });
         }
