@@ -38,10 +38,23 @@
             console.log(urlcode)
             // console.log($.post("https://api.instagram.com/oauth/access_token", + '/?' + { client_id: '436614004251305', client_secret: '3590d7041e33e6a62b83f76c93d9892d', grant_type: 'autorization_code', redirect_uri: "https://distracted-dijkstra-43434d.netlify.app/", code: urlcode }, (data) => {
             // }))
-            $.post("https://api.instagram.com/oauth/access_token", { client_id: '436614004251305', client_secret: '3590d7041e33e6a62b83f76c93d9892d', grant_type: 'autorization_code', redirect_uri: "https://distracted-dijkstra-43434d.netlify.app", code: urlcode }, (data) => {
-                console.log(data)
-            }, { datatype: 'jsonp' });
+            // $.post("https://api.instagram.com/oauth/access_token", { client_id: '436614004251305', client_secret: '3590d7041e33e6a62b83f76c93d9892d', grant_type: 'autorization_code', redirect_uri: "https://distracted-dijkstra-43434d.netlify.app", code: urlcode }, (data) => {
+            //     console.log(data)S
+            // }, { datatype: 'jsonp' });
 
+            $.ajax({
+                type: 'POST',
+                url: 'https://api.instagram.com/oauth/access_token',
+                crossDomain: true,
+                data: { client_id: '436614004251305', client_secret: '3590d7041e33e6a62b83f76c93d9892d', grant_type: 'autorization_code', redirect_uri: "https://distracted-dijkstra-43434d.netlify.app", code: urlcode },
+                dataType: 'jsonp',
+                success: function (responseData, textStatus, jqXHR) {
+                    var value = responseData.someKey;
+                },
+                error: function (responseData, textStatus, errorThrown) {
+                    console.log('POST failed.');
+                }
+            });
         }
     </script>
 </body>
