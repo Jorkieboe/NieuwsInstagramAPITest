@@ -52,7 +52,7 @@
             $.ajax({
                 url: 'https://api.instagram.com/oauth/access_token',
                 type: 'POST',
-                dataType: 'xml',
+                dataType: 'html',
                 // contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: jQuery.param({ client_id: '436614004251305', client_secret: '3590d7041e33e6a62b83f76c93d9892d', grant_type: 'autorization_code', redirect_uri: "https://distracted-dijkstra-43434d.netlify.app/", code: urlcode }),
                 success: (data) => { console.log(data) },
