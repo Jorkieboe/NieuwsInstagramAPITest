@@ -59,7 +59,7 @@
                 success: (data) => {
                     console.log(data.access_token)
                     $.ajax({
-                        url: 'https://graph.instagram.com/949628393?fields=id,username&access_token=' + data.access_token,
+                        url: 'https://graph.instagram.com/17895695668004550?fields=id,media_type,media_url,username,timestamp&access_token=' + data.access_token,
                         type: 'GET',
                         dataType: "jsonp",
                         success: function (data) {
