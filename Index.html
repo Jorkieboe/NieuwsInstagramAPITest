@@ -27,7 +27,20 @@
         //     },
         //     type: 'GET',
         // });
+        // $.ajax({
+        //                 url: 'https://graph.instagram.com/949628393?fields=id,username&access_token=' + token.access_token,
+        //                 type: 'GET',
+        //                 dataType: "jsonp",
+        //                 error: function (data) {
+        //                     console.log('error')
+        //                     console.log(data)
+        //                 },
 
+        //                 success: function (data) {
+        //                     console.log(data)
+        //                 }
+
+        //             })
 
         const url = window.location.search;
         const urlparameter = new URLSearchParams(url)
@@ -60,20 +73,7 @@
                     console.log(token)
                     console.log(token.access_token)
 
-                    $.ajax({
-                        url: 'https://graph.instagram.com/949628393?fields=id,username&access_token=' + token.access_token,
-                        type: 'GET',
-                        dataType: "jsonp",
-                        error: function (data) {
-                            console.log('error')
-                            console.log(data)
-                        },
 
-                        success: function (data) {
-                            console.log(data)
-                        }
-
-                    })
                 },
                 error: (data) => { console.log(data) }
 
