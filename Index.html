@@ -32,6 +32,7 @@
         const url = window.location.search;
         const urlparameter = new URLSearchParams(url)
 
+
         if (urlparameter.has('code')) {
             const urlcode = urlparameter.get('code')
             console.log(urlcode)
@@ -43,18 +44,18 @@
             // });
             console.log($.ajax({
                 url: 'https://api.instagram.com/oauth/access_token',
-                type: "POST",
+                type: 'post',
                 dataType: 'jsonp',
                 data: { client_id: '436614004251305', client_secret: '3590d7041e33e6a62b83f76c93d9892d', grant_type: 'autorization_code', redirect_uri: "https://distracted-dijkstra-43434d.netlify.app/", code: urlcode },
 
             }))
             $.ajax({
                 url: 'https://api.instagram.com/oauth/access_token',
-                type: "POST",
+                type: 'post',
                 dataType: 'jsonp',
-                data: { client_id: '436614004251305', client_secret: '3590d7041e33e6a62b83f76c93d9892d', grant_type: 'autorization_code', redirect_uri: "https://distracted-dijkstra-43434d.netlify.app/", code: urlcode },
+                data: jQuery.param({ client_id: '436614004251305', client_secret: '3590d7041e33e6a62b83f76c93d9892d', grant_type: 'autorization_code', redirect_uri: "https://distracted-dijkstra-43434d.netlify.app/", code: urlcode }),
                 success: (data) => { console.log(data) },
-                error: () => { console.log('fout') }
+                error: (data) => { console.log(data) }
 
             })
 
