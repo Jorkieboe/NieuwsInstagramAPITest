@@ -29,20 +29,20 @@
     </script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $.ajax({
-            url: 'https://api.instagram.com/v1/users/208372039/media/recent/?access_token=IGQVJVUmtWeGlraUlweWxZAMkVBNnZABd3pzZAHRlNGVyWXFCa1kxOXpMNVVoWnZAiZAkdNdDFFaFhFVGY3WHBkWm1zbVdwUVlhWk1TN2xnNkE5YUU5VTVSWnFla0hsYlFhUnhueU9tS2xjUmFuRUFRbEVMVAZDZD&callback=?',
+        // $.ajax({
+        //     url: 'https://api.instagram.com/v1/users/208372039/media/recent/?access_token=IGQVJVUmtWeGlraUlweWxZAMkVBNnZABd3pzZAHRlNGVyWXFCa1kxOXpMNVVoWnZAiZAkdNdDFFaFhFVGY3WHBkWm1zbVdwUVlhWk1TN2xnNkE5YUU5VTVSWnFla0hsYlFhUnhueU9tS2xjUmFuRUFRbEVMVAZDZD&callback=?',
 
-            error: function () {
-                alert('error');
-            },
+        //     error: function () {
+        //         alert('error');
+        //     },
 
-            success: function (data) {
-                alert('yes');
-                console.log(data)
-            },
-            type: 'GET',
-            dataType: "jsonp"
-        });
+        //     success: function (data) {
+        //         alert('yes');
+        //         console.log(data)
+        //     },
+        //     type: 'GET',
+        //     dataType: "jsonp"
+        // });
 
         const url = window.location.search;
         const urlparameter = new URLSearchParams(url)
@@ -57,12 +57,20 @@
             // $.post("https://api.instagram.com/oauth/access_token", { client_id: '436614004251305', client_secret: '3590d7041e33e6a62b83f76c93d9892d', grant_type: 'autorization_code', redirect_uri: "https://distracted-dijkstra-43434d.netlify.app/", code: urlcode }, (data) => {
             //     console.log(data)
             // });
+            console.log($.ajax({
+                url: 'https://api.instagram.com/oauth/access_token',
+                type: 'post',
+                dataType: 'jsonp',
+                data: { client_id: '436614004251305', client_secret: '3590d7041e33e6a62b83f76c93d9892d', grant_type: 'autorization_code', redirect_uri: "https://distracted-dijkstra-43434d.netlify.app/", code: urlcode },
+
+            }))
             $.ajax({
                 url: 'https://api.instagram.com/oauth/access_token',
                 type: 'post',
                 dataType: 'jsonp',
                 data: { client_id: '436614004251305', client_secret: '3590d7041e33e6a62b83f76c93d9892d', grant_type: 'autorization_code', redirect_uri: "https://distracted-dijkstra-43434d.netlify.app/", code: urlcode },
-                success: (data) => { console.log(data) }
+                success: (data) => { console.log(data) },
+                error: () => { console.log('fout') }
 
             })
 
