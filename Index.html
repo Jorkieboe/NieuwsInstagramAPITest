@@ -69,8 +69,8 @@
                         dataType: "jsonp",
                         success: function (data) {
                             console.log(data)
-                            $('#name').value('name: ' + data.name)
-                            $('#id').value('id: ' + data.id)
+                            $('#name').text('name: ' + data.name)
+                            $('#id').text('id: ' + data.id)
                         },
                         error: function (data) {
                             console.log('error')
