@@ -9,8 +9,11 @@
 
 <body>
     <h1><a
-            href="https://api.instagram.com/oauth/authorize?client_id=436614004251305&redirect_uri=https://distracted-dijkstra-43434d.netlify.app/&scope=user_profile,user_media&response_type=code">hallo</a>
+            href="https://api.instagram.com/oauth/authorize?client_id=436614004251305&redirect_uri=https://distracted-dijkstra-43434d.netlify.app/&scope=user_profile,user_media&response_type=code">Klik
+            hier om te verbinden met de instagram api</a>
     </h1>
+    <p id='name'>Name: </p>
+    <p id='id'>Id: </p>
     <div id=" instafeed"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
@@ -66,6 +69,8 @@
                         dataType: "jsonp",
                         success: function (data) {
                             console.log(data)
+                            $('#name').value('name: ' + data.name)
+                            $('#id').value('id: ' + data.id)
                         },
                         error: function (data) {
                             console.log('error')
